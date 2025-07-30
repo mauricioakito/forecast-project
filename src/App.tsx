@@ -32,7 +32,7 @@ function App() {
           <p className={styles.statusText}>{status}</p>
         )}
 
-        {isSearching && <img src="/wheater.gif" />}
+        {isSearching && <img src="/forecast-project/wheater.gif" />}
 
         {!isSearching && cardData && <CardContainer cardData={cardData} />}
       </div>

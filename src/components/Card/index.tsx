@@ -20,12 +20,12 @@ export const Card = ({item, cardKey}: ICardProps) => {
       <div className={styles.statusContainer}>
         <div className={styles.statusItem}>
           <span className={styles.statusText}>Max: {Math.round(item.temperature_2m_max)}°C</span>
-          <img className={styles.statusIcon} src="/temp.svg" alt="Temperature" />
+          <img className={styles.statusIcon} src="/forecast-project/temp.svg" alt="Temperature" />
           <span className={styles.statusText}>Min: {Math.round(item.temperature_2m_min)}°C</span>
         </div>
         <div className={styles.statusItem}>
           <span className={styles.statusText}>Probability: {item.precipitation_probability_max}%</span>
-          <img className={styles.statusIcon} src="/rain.svg" alt="Precipitation" />
+          <img className={styles.statusIcon} src="/forecast-project/rain.svg" alt="Precipitation" />
           <span className={styles.statusText}>Quantity: {item.precipitation_sum}mm</span>
         </div>
       </div>
