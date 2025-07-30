@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './Card.module.scss'
 import { weatherCodeToText } from '../../utils/weatherCode'
 import type { ICardDataProps } from '../../types/Card'
