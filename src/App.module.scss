@@ -1,0 +1,36 @@
+.page {
+    // background: white;
+    // border-radius: 8px;
+    // box-shadow: 0px 0px 20px 2px #d0d0d0;
+    // padding: 2rem;
+}
+
+.title {
+    margin: 0 0 1rem;
+}
+.infoContainer {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    
+    @media screen and (min-width: 1024px) {
+        width: 1120px;
+        height: 462px;
+    }
+
+}
+
+.loadedForecast {
+    background-color: white;
+    border-radius: 0px;
+}
+
+.statusText {
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.2rem;
+}

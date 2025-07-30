@@ -1,0 +1,58 @@
+.card {
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 225px;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px -7px #545454;
+  width: 100%;
+
+  position: relative;
+
+  &:nth-of-type(1) {
+    background-color: #eeeeee;
+  }
+
+  .date {
+    background-color: #ffb303;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    color: black;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .day, .statusText {
+    margin: 0;
+  }
+
+  .statusContainer {
+    display: flex;
+    gap: 1rem;
+    background-color: rgb(248 248 250);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .statusItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+  .statusText {
+    font-size: 0.8rem;
+    color: rgb(123, 123, 123);
+  }
+  .statusIcon {
+    width: 3rem;
+  }
+  .titleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
