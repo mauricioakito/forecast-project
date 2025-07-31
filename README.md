@@ -47,7 +47,7 @@ yarn dev
 
 ## Technologies Used
 
-**React**
-**TypeScript**
-**Public Weather API** -> https://api.open-meteo.com
-**Public Geocoding API** -> https://nominatim.openstreetmap.org
+* **React**
+* **TypeScript**
+* **Public Geocoding API:** https://nominatim.openstreetmap.org
+* **Public Weather API:** https://api.open-meteo.com
