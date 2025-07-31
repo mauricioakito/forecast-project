@@ -90,7 +90,7 @@ export const Search = ({
       <div className={styles.inputContainer}>
         {SEARCH_FORM.map(({ Icon, placeholder, name }) => {
           return (
-            <div className={styles.inputInnerContainer}>
+            <div className={styles.inputInnerContainer} key={name}>
               <Icon className={styles.inputIcon} />
               <input
                 className={styles.input}
