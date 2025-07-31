@@ -1,69 +1,53 @@
-# React + TypeScript + Vite
+# Weather Forecast Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application built with React and TypeScript that displays a 7-day weather forecast for a specified address, utilizing public weather and geocoding REST APIs.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **Location-Based Forecast:** Get a 7-day weather forecast for any address you specify.
+* **API Integration:** Connects to public geocoding APIs to convert addresses into coordinates and weather APIs to fetch forecast data.
+* **Interactive UI:** Presents weather information on a user-friendly HTML page.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Geocoding API
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This project uses the [Nominatim OpenStreetMap API](https://nominatim.openstreetmap.org/) for geocoding. Please be aware of their [Usage Policy](https://operations.osmfoundation.org/policies/nominatim/), which outlines rules to prevent abuse and potential banning of users if not followed.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Unacceptable Use (from Nominatim Usage Policy):**
+* **Auto-complete search:** This is not yet supported by Nominatim, and you must not implement such a service on the client side using the API.
+* **Systematic queries:** This includes reverse queries in a grid, searching for complete lists of postcodes, towns, etc., and downloading all POIs in an area. If you need complete sets of data, get it from the [OSM planet](https://planet.openstreetmap.org/) or an extract.
+* **Scraping of details:** The details page is there for debugging only and may not be downloaded automatically.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+
+## Installation
+
+To get a copy of the project up and running on your local machine, follow these steps:
+
+1.  **Clone the repository:**
+    git clone [https://github.com/mauricioakito/forecast-project.git](https://github.com/mauricioakito/forecast-project.git)
+    
+2.  **Navigate to the project directory:**
+    cd forecast-project
+    
+3.  **Install dependencies:**
+    yarn
+    
+
+
+## Usage
+
+After installation, you can run the development server:
+
+yarn dev
+
+
+## Technologies Used
+
+**React**
+**TypeScript**
+**Public Weather API** -> https://api.open-meteo.com
+**Public Geocoding API** -> https://nominatim.openstreetmap.org
