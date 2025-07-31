@@ -1,0 +1,1 @@
+export const INITIAL_MESSAGE = "Welcome to your personal 7-Day Weather Forecast! To begin exploring the weather in your area, kindly provide your complete address information in the input fields above, then simply click the 'Search' button to retrieve the forecast."
