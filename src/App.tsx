@@ -4,11 +4,12 @@ import { Search } from "./components/Search";
 import type { ICardDataProps } from "./types/Card";
 import { CardContainer } from "./components/CardContainer";
 import classNames from "classnames";
+import { INITIAL_MESSAGE } from "./constraints/Home";
 
 function App() {
   const [cardData, setCardData] = useState<ICardDataProps[]>();
   const [isSearching, setIsSearching] = useState(false);
-  const [status, setStatus] = useState("Welcome to your personal 7-Day Weather Forecast! To begin exploring the weather in your area, kindly provide your complete address information in the input fields above, then simply click the 'Search' button to retrieve the forecast.");
+  const [status, setStatus] = useState(INITIAL_MESSAGE);
 
   return (
     <div className={styles.page}>
