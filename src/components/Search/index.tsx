@@ -10,7 +10,7 @@ import { GeoService } from "../../services/geoservice";
 import type { ICardDataProps } from "../../types/Card";
 import { ForecastService } from "../../services/forecastservice";
 import classNames from "classnames";
-import { SEARCH_FORM } from "../../constraints/SearchForm";
+import { MESSAGES, SEARCH_FORM } from "../../constraints/SearchForm";
 
 interface ISearchProps {
   setStatus: Dispatch<SetStateAction<string>>;
@@ -40,12 +40,18 @@ export const Search = ({
       `${number},${street},${city},${postalCode}`
     );
 
-    if (!geoServiceResponse.hasData) {
+    if ((!geoServiceResponse.hasData) || (geoServiceResponse.status >= 400 && geoServiceResponse.status < 500)) {
       // This Timeout function is here to show the loading status while the request is finished. It is only for example purposes.
       setTimeout(() => {
         setIsSearching(false);
-        setStatus("We couldn't locate a valid address based on your input. Please double-check the details you've provided and try searching again.");
+        setStatus(MESSAGES.geolocation[400]);
       }, 3000);
+      return;
+    }
+
+    if (geoServiceResponse.status >= 500 && geoServiceResponse.status < 600) {
+      setIsSearching(false);
+      setStatus(MESSAGES.geolocation[500]);
       return;
     }
 
@@ -53,15 +59,15 @@ export const Search = ({
 
     const forecastServiceResponse = await ForecastService(latitude, longitute);
 
-    if (forecastServiceResponse.status === 400) {
+    if (forecastServiceResponse.status >= 400 && forecastServiceResponse.status < 500) {
       setIsSearching(false);
-      setStatus("Unfortunately, we were unable to find any weather forecast data for your requested address right now. This might be a temporary issue, so kindly try your search again after a short while.");
+      setStatus(MESSAGES.wheather[400]);
       return;
     }
 
-    if (forecastServiceResponse.status === 500) {
+    if (forecastServiceResponse.status >= 500 && forecastServiceResponse.status < 600) {
       setIsSearching(false);
-      setStatus("We're experiencing technical difficulties with our weather data API at the moment. Please bear with us and try again a little later.");
+      setStatus(MESSAGES.wheather[500]);
       return;
     }
 
