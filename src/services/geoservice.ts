@@ -14,7 +14,7 @@ export const GeoService = async (address: string) => {
   return {
     status: response.status,
     hasData: !(response.data && response.data.length === 0),
-    latitude: geolocation.length > 0 && geolocation.lat,
-    longitute: geolocation.length > 0 && geolocation.lon,
+    latitude: geolocation.lat,
+    longitute: geolocation.lon,
   }
 }
