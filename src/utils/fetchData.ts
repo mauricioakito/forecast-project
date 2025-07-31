@@ -12,7 +12,7 @@ export async function fetchData(url: string, options?: object) {
   } catch (error: any) {
     console.error('Error fetching data:', error);
     return {
-      status: error.status,
+      status: 500,
       data: null
     }
   }
