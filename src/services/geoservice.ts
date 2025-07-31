@@ -10,6 +10,7 @@ export const GeoService = async (address: string) => {
   .getOrElse([])
 
   return {
+    status: response.status,
     hasData: !(response.data.length === 0),
     latitude: geolocation.lat,
     longitute: geolocation.lon,
