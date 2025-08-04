@@ -2,29 +2,23 @@ import {
   useCallback,
   useState,
   type ChangeEvent,
-  type Dispatch,
-  type SetStateAction,
 } from "react";
 import styles from "./Search.module.scss";
 import { GeoService } from "../../services/geoservice";
-import type { ICardDataProps } from "../../types/Card";
 import { ForecastService } from "../../services/forecastservice";
 import classNames from "classnames";
 import { MESSAGES, SEARCH_FORM } from "../../constraints/SearchForm";
+import { useWeatherStore } from "../../store/useWeatherStore";
 
-interface ISearchProps {
-  setStatus: Dispatch<SetStateAction<string>>;
-  setCardData: Dispatch<SetStateAction<ICardDataProps[] | undefined>>;
-  setIsSearching: Dispatch<SetStateAction<boolean>>;
-  isSearching: boolean;
-}
+export const Search = () => {
 
-export const Search = ({
-  setStatus,
-  setCardData,
-  isSearching,
-  setIsSearching,
-}: ISearchProps) => {
+  const {
+    setCardData,
+    setIsSearching,
+    setStatus,
+    isSearching,
+  } = useWeatherStore();
+
   const [inputText, setInputText] = useState({
     street: "",
     number: "",
