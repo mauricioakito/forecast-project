@@ -12,7 +12,6 @@ export const Search = () => {
     useWeatherStore();
 
   const [city, setCity] = useState("");
-
   const searchForecast = async () => {
     setIsSearching(true);
     setCardData(undefined);
