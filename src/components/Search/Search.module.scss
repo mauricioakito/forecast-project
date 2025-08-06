@@ -1,7 +1,7 @@
 .search {
 
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   flex-direction: column;
 
     @media screen and (min-width: 1024px) {
@@ -40,14 +40,14 @@
     width: calc(100vw - 5.5rem);
 
     @media screen and (min-width: 1024px) {
-      width: auto;
+      width: 300px;
     }
   }
 
   .button {
     padding: 0.5rem 2rem;
     color: white;
-    border-radius: 1rem;
+    border-radius: 8px;
     border: none;
     background-color: rgb(78 101 240);
     cursor: pointer;
